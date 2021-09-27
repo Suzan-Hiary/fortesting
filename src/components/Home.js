@@ -15,7 +15,7 @@ class Home extends React.Component {
     }
   }
   componentDidMount = () => {
-    const { isAuthenticated, user } = this.props.auth0;
+    const { isAuthenticated } = this.props.auth0;
     let email = this.props.auth0.user.email
     console.log(email)
     if (isAuthenticated) {

@@ -1,6 +1,9 @@
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Home from './components/Home';
+import Login from './components/Login';
+import Favlist from './components/Favlist'
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,9 +23,11 @@ class App extends React.Component {
             <Header />
             <Switch>
               <Route exact path="/">
-                {/* TODO: if the user is logged in, render the `Home` component, if they are not, render the `Login` component */}
+                { isAuthenticated ? <Home/> : <Login/>}
               </Route>
-              <Route exact path="/crypto-list">
+              <Route exact path="/favlist">
+              { isAuthenticated ? <Favlist/> : <Login/>}
+
                 {/* TODO: if the user is logged in, render the `FavFlowers` component, if they are not, render the `Login` component */}
               </Route>
             </Switch>
